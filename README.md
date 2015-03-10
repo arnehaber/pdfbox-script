@@ -8,8 +8,8 @@
 * cd $(BASEDIR)
 * git clone https://github.com/arnehaber/pdfbox-script
 * make all or directly mvn install
-* Softlink bash-completion file: ln -s $(BASEDIR)/pdfbox-script/src/main/resources/pdfbox.sh /etc/bash_completion.d/pdfbox
-* add executable (BASEDIR)/target/app/bin/pdfbox to the classpath. 
+* softlink bash-completion file: ln -s $(BASEDIR)/pdfbox-script/src/main/resources/pdfbox.sh /etc/bash_completion.d/pdfbox
+* add executable (BASEDIR)/target/app/bin/pdfbox to the $PATH variable. 
 
 ## License
 
