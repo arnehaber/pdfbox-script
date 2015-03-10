@@ -26,18 +26,33 @@ import java.io.IOException;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 
-public class CountPages {
-    
+/**
+ * Adds the functionality to count pages of a pdf.
+ * 
+ * @author Arne Haber
+ */
+public final class CountPages {
+
+    /**
+     * Parameter option name.
+     */
     public static final String OPTION_NAME = "PDFCountPages";
-    
-    public static void main(String[] args) {
+
+    /**
+     * 
+     * @param args
+     *            accepts two arguments. The first has to be
+     *            {@link CountPages#OPTION_NAME}, the second has to point to a
+     *            pdf file.
+     */
+    protected static void main(String[] args) {
         checkArgument(args.length == 2, "Please use " + OPTION_NAME + " input-pdf");
-        
+
         String[] arguments = new String[args.length - 1];
         System.arraycopy(args, 1, arguments, 0, arguments.length);
-        
+
         CountPages counter = new CountPages();
-        File input = new File(arguments[0]); 
+        File input = new File(arguments[0]);
         int pages;
         try {
             pages = counter.count(input);
@@ -49,6 +64,17 @@ public class CountPages {
         }
     }
 
+    /**
+     * Counts the number of pages from a given <b>input</b> file.
+     * 
+     * @param input
+     *            input pdf file that has to exist and must be a file.
+     * @return number of pages from the given pdf file.
+     * @throws IOException
+     *             If there is an error reading from the given file.
+     * @throws IllegalArgumentException
+     *             If the <b>file</b> does not exist or is not a file.
+     */
     public int count(File input) throws IOException {
         checkArgument(input.exists() && input.isFile(), "The input pdf has to exist and must be a file.");
         PDDocument doc = PDDocument.load(input);
@@ -56,7 +82,5 @@ public class CountPages {
         doc.close();
         return res;
     }
-
-    
 
 }

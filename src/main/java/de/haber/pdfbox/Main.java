@@ -21,6 +21,11 @@ package de.haber.pdfbox;
 
 import org.apache.pdfbox.PDFBox;
 
+/**
+ * Main class for pdfbox-script. Either delegates to {@link CountPages#main(String[])} or to {@link PDFBox#main(String[])}.
+ * 
+ * @author Arne Haber
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -31,5 +36,4 @@ public class Main {
             PDFBox.main(args);
         }
     }
-
 }

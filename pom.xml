@@ -98,7 +98,7 @@
               <failOnError>true</failOnError>
               <target>
                 <chmod file="${assemble.dir}/bin/pdfbox" perm="ugo+rx" />
-                 <copy todir="${licence.dir}">
+                <copy todir="${licence.dir}">
                   <fileset
                     dir="${project.build.directory}/generated-sources/license/" />
                 </copy>
@@ -183,7 +183,8 @@
             <target>${java.version}</target>
           </configuration>
         </plugin>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        <!--This plugin's configuration is used to store Eclipse m2e settings 
+          only. It has no influence on the Maven build itself. -->
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
           <artifactId>lifecycle-mapping</artifactId>
