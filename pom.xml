@@ -110,6 +110,8 @@
                   </zipfileset>
                   <zipfileset dir="${assemble.dir}" includes="bin/pdfbox"
                     filemode="755" />
+                  <zipfileset dir="src/main/resources" includes="auto/pdfbox.sh"
+                    filemode="755" />
                 </zip>
               </target>
             </configuration>
